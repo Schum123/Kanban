@@ -1,12 +1,12 @@
 <script>
-  import fakeData from '../Helpers/persons.js'
-  import Column from "./Organisms/Column/index.svelte"
-  import ColumnItem from "./Molecules/ColumnItem/index.svelte"
-  import Action from "./Atoms/Button/index.svelte"
-  import AddUserForm from './Organisms/AddUserForm/index.svelte'
-  import Modal from './Organisms/Modal/index.svelte'
-  import VButton from './Atoms/Button/index.svelte'
-  import VInput from './Atoms/Input/index.svelte'
+  import fakeData from '../../Helpers/persons.js'
+  import Column from "../Organisms/Column/index.svelte"
+  import ColumnItem from "../Molecules/ColumnItem/index.svelte"
+  import Action from "../Atoms/Button/index.svelte"
+  import AddUserForm from '../Organisms/AddUserForm/index.svelte'
+  import Modal from '../Organisms/Modal/index.svelte'
+  import VButton from '../Atoms/Button/index.svelte'
+  import VInput from '../Atoms/Input/index.svelte'
   import dragula from "dragula";
   import { onMount } from "svelte";
   import { afterUpdate } from 'svelte';
@@ -27,8 +27,6 @@
   let status = '';
   let i = 0;
   onMount(() => {
-    console.log(persons)
-
     dragula([
       document.getElementById("Contact"),
       document.getElementById("Dialog"),
@@ -36,18 +34,11 @@
       document.getElementById("Offer"),
 	    document.getElementById("Completed"),
     ])
-    // .setOptions('group', {
-    //   invalid: (el, handle) => el.classList.contains('modal')
-    // })
       .on("drag", el => {
-        // add 'is-moving' class to element being dragged
         el.classList.add("is-moving");
       })
       .on("dragend", el => {
-        // remove 'is-moving' class from element after dragging has stopped
         el.classList.remove("is-moving");
-
-        // add the 'is-moved' class for 600ms then remove it
         window.setTimeout(() => {
           el.classList.add("is-moved");
           window.setTimeout(() => {
@@ -58,7 +49,6 @@
   });
   function create() {
     persons = persons.concat({ name:{first, last}, email, location:{street:address}, age, status, picture:{large:"https://randomuser.me/api/portraits/men/24.jpg"} });
-    console.log(persons)
 		 i = persons.length - 1;
      first = last =  email = address = status = '';
      showModalAddUser = false;
@@ -138,7 +128,7 @@
       </Column>
     </ul>
 {:else}
-  <!-- <p class="loading">Laddar...</p> -->
+  <p class="loading">Laddar...</p>
 {/if}
 {#if showModalAddUser}
 	<Modal on:close="{() => showModalAddUser = false}">
