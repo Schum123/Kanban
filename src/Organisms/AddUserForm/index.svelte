@@ -27,7 +27,7 @@
 
 <style>
     div:not(.submit--row) {
-        background-color: #FFF;
+        background-color: var(--colorLight);
         max-width: 645px;
         padding: 10px 18px 20px 24px;
         border-radius: 4px;
@@ -51,7 +51,7 @@
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.025em;
-        color: #fff;
+        color: var(--colorLight);
         background: #6772e5;
         text-decoration: none;
         transition: all 0.15s ease;

@@ -49,7 +49,7 @@
     display: block;
   }
   .menu li span {
-    color: #000;
+    color: var(--colorDark);
     display: block;
     cursor: pointer;
     padding: 5px 12px;
@@ -65,13 +65,13 @@
     border-radius: 4px;
     box-shadow: 0 2px 5px -1px rgba(50, 50, 93, 0.25),
       0 1px 3px -1px rgba(0, 0, 0, 0.3);
-    background: #fff;
+    background: var(--colorLight);
     padding: 12px;
     text-align: left;
     position: relative;
   }
   h4 {
-    color: #000;
+    color: var(--colorDark);
     text-transform: capitalize;
   }
   .more {

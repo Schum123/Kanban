@@ -177,7 +177,7 @@
     margin: 10px -10px 10px auto;
   }
   .user__wrapper {
-    background-color: #FFF;
+    background-color: var(--colorLight);
     padding: 20px;
     color: #32325d;
     /* backface-visibility: hidden; */

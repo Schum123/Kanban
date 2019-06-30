@@ -28,7 +28,7 @@
 <style>
   .card {
     max-width: 300px;
-    background-color: #fff;
+    background-color: var(--colorLight);
     border-radius: 5px;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
     overflow: hidden;
